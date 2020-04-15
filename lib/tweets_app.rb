@@ -12,6 +12,7 @@ class TweetsApp
       case choice
       when "l"
         tweets = Tweet.all
+        # binding.pry
         list_tweets(tweets)
       when "c"
         create_tweet
@@ -39,6 +40,9 @@ class TweetsApp
     puts ""
     tweet = Tweet.new({'username' => username, 'message' => message})
 
+    tweet.save
+
     tweets = Tweet.all
   end
 end
+
